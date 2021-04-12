@@ -162,3 +162,30 @@ function onDrop(e) {
     draggableDiv.setAttribute("draggable", "false");
     e.target.appendChild(draggableDiv);
 }
+/*--------------------Members----------------------------*/
+// Get input element
+let filterInput = document.getElementById('filter-input');
+
+// Add event listener
+filterInput.addEventListener('keyup', filterNames);
+
+function filterNames() {
+  // Get value of input
+  let filterValue = document.getElementById('filter-input').value.toUpperCase();
+
+  // Get names
+  let names = document.getElementById('names');
+  let items = names.querySelectorAll('p.card-text');
+
+  // Loop through items
+  for(let i = 0; i < items.length; i++) {
+    let a = items[i].getElementsByTagName('a')[0];
+
+    // If match
+    if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+      items[i].style.display = '';
+    } else {
+      items[i].style.display = 'none';
+    }
+  }
+}

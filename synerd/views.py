@@ -8,3 +8,6 @@ def join(request):
 
 def webportal(request):
     return render(request, 'webportal.html')
+
+def members(request):
+    return render(request, 'members.html')

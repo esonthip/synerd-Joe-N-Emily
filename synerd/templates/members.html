@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Synergy of Diaspora</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Hide forms upon loading page
+            $(".modallogin").hide();
+            $(".modaljoin").hide();
+
+            // Show forms upon clicking buttons
+            $("#login").click(function () {
+                $(".modallogin").show();
+                $(".modaljoin").hide();
+            });
+
+            $("#join").click(function () {
+                $(".modaljoin").show();
+                $(".modallogin").hide();
+            });
+        })
+    </script>
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+
+<body>
+    <h1>
+        SynerD <br />
+        Synergy of Diaspora
+    </h1>
+
+    <h2 id="purposeQuote">
+        <a href="index.html"><img src="logo.png" alt="logo" id="synerD"></a>
+        <p id="quote"><i>Let's Serve Purposefully</i></p>
+        <br>
+        <div id="gethere" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="http://icons.iconarchive.com/icons/custom-icon-design/pretty-office-11/128/coin-us-dollar-icon.png"
+                alt="coin" width="70px" height="80px" draggable="true" ondragstart="drag(event)" />
+        </div>
+        <button id="donate" ondrop="drop(event)" ondragover="allowDrop(event)" id="drophere" type="submit"
+            onclick="donateClick()">Donate <img src="http://redboxeasyweb.com/wp-content/uploads/icon-piggybank.png"
+                width="70px" height="80px" id="money" /> </button>
